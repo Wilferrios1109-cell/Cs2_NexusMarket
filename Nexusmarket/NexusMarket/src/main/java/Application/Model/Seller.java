@@ -1,16 +1,23 @@
 package Application.Model;
 
 import Application.Value_Objects.SystemRole;
+import Application.Value_Objects.UserStatus;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Getter
-@Setter
-@NoArgsConstructor
 public class Seller extends User {
 
-    {
-        setRole(SystemRole.SELLER);
+    public Seller(
+            String identification,
+            String fullName,
+            String email,
+            UserStatus status) {
+
+        super(identification, fullName, email, status);
+    }
+
+    @Override
+    public SystemRole getRole() {
+        return SystemRole.SELLER;
     }
 }
